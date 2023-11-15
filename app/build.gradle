@@ -1,0 +1,97 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id "kotlin-kapt"
+    id "kotlin-android-extensions" // removed in Kotlin 1.8
+}
+
+android {
+    namespace 'com.c51.onboarding'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.c51.onboarding"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+
+dependencies {
+    // core-ktx 1.9.0与ANdroid 13 (API 33)更兼容;  版本再高如1.10.0就编译出错, 因为它需要kotlin 1.8版本
+    implementation 'androidx.core:core-ktx:1.9.0'
+    //targetSDK = 33后, 可以从1.4.1升到最新的1.6.1
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    // targetSDK = 33后, 从1.6.0可升到最新的1.9.0.    // 再也没这个编译错误了: "Can't determine type for tag '<macro name="m3_comp_assist_chip_container_shape">?attr/shapeAppearanceCornerSmall</macro>'"
+    implementation 'com.google.android.material:material:1.9.0'
+
+    // targetSDK = 33后, 版本不能是最新的1.7.1与1.6.0, 不然会因为kotlin-stdlib要使用1.8而编译不能
+    implementation "androidx.activity:activity-ktx:1.5.0"
+    implementation "androidx.fragment:fragment-ktx:1.5.0"
+
+    // targetSDK = 33后, 不能高到2.6去, 不然会因为kotlin-stdlib要使用1.8而编译不能
+    def lifecycle_version = "2.5.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-process:$lifecycle_version"
+
+    // UI
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    implementation 'com.airbnb.android:lottie:5.2.0'
+
+    implementation "com.github.skydoves:balloon:1.4.7" // 1.4.8+版本就要使用compileSDK 32了
+
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:4.11.0"
+    kapt "com.github.bumptech.glide:compiler:4.11.0"
+
+    // DI
+    def koinVersion = "3.1.5"
+    implementation "io.insert-koin:koin-core:$koinVersion"
+    implementation "io.insert-koin:koin-android:$koinVersion"
+    implementation "io.insert-koin:koin-android-compat:$koinVersion"
+
+    // Rx
+    implementation "io.reactivex.rxjava3:rxjava:3.1.2"
+    implementation "io.reactivex.rxjava3:rxandroid:3.0.0"
+    implementation 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
+
+    implementation "com.squareup.okhttp3:okhttp:4.9.1"
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
+
+    // debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.8.1'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

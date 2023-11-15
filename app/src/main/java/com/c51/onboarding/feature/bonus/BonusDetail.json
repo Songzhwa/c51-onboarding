@@ -1,0 +1,21 @@
+{
+  "bonus_plan_id": 948,
+  "name": "AVEENO® Bonus",
+  "description": "Redeem one AVEENO® Body Lotion and one AVEENO® Body Wash by Wednesday, and get a bonus $1.00.",
+  "cash_back_amount": "1.00",
+  "cash_back_currency": "CAD",
+  "batch_start_date": "2023-11-09T00:00:00+00:00",
+  "batch_end_date": "2023-11-15T23:59:59+00:00",
+  "offers": [
+    {
+      "offer_id": 65209,
+      "name": "AVEENO® Body Wash",
+      "image": "https://checkout51-production.s3-us-west-2.amazonaws.com/1669765678_19233132_ADMIN_UPLOAD110763-list.jpg"
+    },
+    {
+      "offer_id": 65210,
+      "name": "AVEENO® Body Lotion",
+      "image": "https://checkout51-production.s3-us-west-2.amazonaws.com/1669765678_19233132_ADMIN_UPLOAD110764-list.jpg"
+    }
+  ]
+}
