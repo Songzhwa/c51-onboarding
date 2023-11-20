@@ -3,4 +3,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="dime">#E8EAEB</color>
+    <color name="mint">#1DD1A1</color>
+    <color name="cash">#138667</color>
+    <color name="half_dollar">#5B646E</color>
+    <color name="nickel">#C8CBCF</color>
+    <color name="quarter">#92989E</color>
+    <color name="coal">#25313E</color>
+    <color name="loonie">#FFC23D</color>
 </resources>

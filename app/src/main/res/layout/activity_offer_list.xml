@@ -5,17 +5,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView android:id="@+id/tvTitle"
+    <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchMode"
         android:layout_width="wrap_content" android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent" app:layout_constraintLeft_toLeftOf="parent"
-        android:text="Hello, user"
+        android:text="List" android:padding="10dp" android:textSize="25dp"
+        android:checked="false"
         />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvOfferList"
         android:layout_width="match_parent" android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle" app:layout_constraintLeft_toLeftOf="parent"
-        tools:itemCount="5" tools:listitem="@layout/item_offer_card"
+        app:layout_constraintTop_toBottomOf="@id/switchMode" app:layout_constraintLeft_toLeftOf="parent"
+        tools:itemCount="5" tools:listitem="@layout/item_offer_card_list"
+        android:layout_margin="5dp"
         />
 
 

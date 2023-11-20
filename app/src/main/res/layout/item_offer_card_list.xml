@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/offerCardViewRoot"
+    android:layout_width="match_parent"
+    android:layout_height="87dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvOfferCashback"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:textSize="20dp"
+            tools:text="$1.50 Back"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/viewOfferBg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvOfferName"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="1dp"
+            app:layout_constraintEnd_toStartOf="@+id/ivAddOffer"
+            app:layout_constraintStart_toEndOf="@id/viewOfferBg"
+            app:layout_constraintTop_toBottomOf="@id/tvOfferCashback"
+            tools:text="Pressed Juicery Wellness ShotDuo Ginger Base" />
+
+        <TextView
+            android:id="@+id/tvOfferSeller"
+            android:textSize="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/viewOfferBg"
+            tools:text="Whole Foods Only" />
+
+        <View
+            android:id="@+id/viewOfferBg"
+            android:layout_width="104dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:scaleType="fitXY"
+            android:background="@color/white"
+            tools:background="#F3F0F9" />
+
+        <ImageView
+            android:id="@+id/ivOfferProduct"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:layout_margin="16dp"
+            android:background="#0000"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="@id/viewOfferBg"
+            app:layout_constraintBottom_toBottomOf="@id/viewOfferBg"
+            app:layout_constraintStart_toStartOf="@id/viewOfferBg"
+            app:layout_constraintTop_toTopOf="@id/viewOfferBg"
+            />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/dime"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/viewOfferBg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView android:id="@+id/ivAddOffer"
+            android:layout_width="35dp" android:layout_height="35dp"
+            android:src="@drawable/ic_add_offer"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintRight_toRightOf="parent"
+            android:layout_margin="5dp"
+            />
+
+        <View
+            android:id="@+id/offerCardOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/bg_offer_card_view_disabled_overlay_rectangular"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/llayOfferStatuses"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginBottom="7dp"
+            app:layout_constraintBaseline_creator="@id/tvOfferSeller"
+            app:layout_constraintBottom_toBottomOf="@+id/tvOfferSeller"
+            app:layout_constraintEnd_toEndOf="@id/viewOfferBg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvOfferSeller" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

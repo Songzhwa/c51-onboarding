@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:background="#E5E5E5">
+
+    <TextView
+        android:id="@+id/tvSectionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:includeFontPadding="false"
+        android:textColor="@color/coal"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Top Picks" />
+
+    <TextView
+        android:id="@+id/tvLeftBracket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:text=" ("
+        android:textColor="@color/nickel"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvSectionTitle"
+        app:layout_constraintStart_toEndOf="@id/tvSectionTitle" />
+
+    <TextView
+        android:id="@+id/tvSectionCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:textColor="@color/quarter"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvLeftBracket"
+        app:layout_constraintStart_toEndOf="@+id/tvLeftBracket"
+        tools:text="10" />
+
+
+    <TextView
+        android:id="@+id/tvRightBracket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:text=")"
+        android:textColor="@color/nickel"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvSectionCount"
+        app:layout_constraintStart_toEndOf="@+id/tvSectionCount" />
+
+    <View android:id="@+id/viewDivider"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_list_divider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivSectionChevron"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivSectionChevron"
+        android:layout_width="17dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="2dp"
+        app:layout_constraintStart_toEndOf="@id/tvRightBracket"
+        android:src="@drawable/ic_chevron_arrows"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
